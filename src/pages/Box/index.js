@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import { MdInsertDriveFile } from 'react-icons/md';
+import { formatDistanceToNow } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 
 import api from '../../services/api';
 
@@ -37,7 +39,10 @@ export default class Box extends Component {
                 <strong>{file.title}</strong>
               </a>
 
-              <span>{file.createdAt}</span>
+              <span>há { formatDistanceToNow(new Date(file.createdAt), {
+                locale: ptBR
+              })}
+              </span>
             </li>
           ))}
         </ul>
