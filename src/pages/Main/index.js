@@ -10,10 +10,14 @@ export default class Main extends Component {
     newBox: '',
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(this.state.newBox)
+    const response = await api.post('boxes', {
+      title: this.state.newBox
+    });
+
+    console.log(response.data);
   }
 
   handleInputChange = (e) => {
