@@ -28,7 +28,7 @@
   border-radius: 4px;
   padding: 30px;
   text-align: center;
-  border: 10px dashed #ddd;
+  border: 2px dashed #ddd;
   color: #999;
   margin-top: 50px;
   cursor: pointer;
@@ -45,7 +45,7 @@
   align-content: center;
 }
 
-#box-container ul li + li {
+#box-container ul li+li {
   padding-top: 20px;
   margin-top: 20px;
   border-top: 1px solid #eee;
