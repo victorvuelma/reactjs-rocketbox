@@ -21,22 +21,21 @@ export const Container = styled.div`
       padding: 0 20px;
       margin-top: 30px;
     }
+  }
+`
+export const SubmitButton = styled.button`
+  height: 48px;
+  background-color: ${props => props.color || '#7159c1'};
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 0 20px;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
 
-    button {
-      height: 48px;
-      background-color: #7159c1;
-      border-radius: 4px;
-      font-size: 16px;
-      padding: 0 20px;
-      margin-top: 10px;
-      color: #fff;
-      font-weight: bold;
-      border: 0;
-      cursor: pointer;
-
-      &:hover {
-        opacity: 0.8;
-      }
-    }
+  &:hover {
+    opacity: 0.8;
   }
 `

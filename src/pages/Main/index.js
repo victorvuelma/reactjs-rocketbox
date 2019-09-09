@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import api from '../../services/api'
 
-import { Container } from './styles'
+import { Container, SubmitButton } from './styles'
 
 import logo from '../../assets/logo.svg'
 
@@ -35,7 +35,9 @@ export default class Main extends Component {
             value={this.state.newBox}
             onChange={this.handleInputChange}
           />
-          <button type="submit">Criar</button>
+          <SubmitButton color="#7159c1" type="submit">
+            Criar
+          </SubmitButton>
         </form>
       </Container>
     )
