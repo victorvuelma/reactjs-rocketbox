@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import api from '../../services/api'
 
+import { Container } from './styles'
+
 import logo from '../../assets/logo.svg'
-import './styles.css'
 
 export default class Main extends Component {
   state = {
-    newBox: ''
+    newBox: '',
   }
 
   handleSubmit = async e => {
     e.preventDefault()
 
     const response = await api.post('boxes', {
-      title: this.state.newBox
+      title: this.state.newBox,
     })
 
     this.props.history.push(`/box/${response.data._id}`)
@@ -23,20 +24,20 @@ export default class Main extends Component {
     this.setState({ newBox: e.target.value })
   }
 
-  render () {
+  render() {
     return (
-      <div id='main-container'>
+      <Container>
         <form onSubmit={this.handleSubmit}>
-          <img src={logo} alt='RocketBox Logo' />
+          <img src={logo} alt="RocketBox Logo" />
           <input
-            type='text'
-            placeholder='Criar um box'
+            type="text"
+            placeholder="Criar um box"
             value={this.state.newBox}
             onChange={this.handleInputChange}
           />
-          <button type='submit'>Criar</button>
+          <button type="submit">Criar</button>
         </form>
-      </div>
+      </Container>
     )
   }
 }
